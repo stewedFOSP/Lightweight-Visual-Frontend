@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Project Website Placeholder</title>
+    <title>Lightweight Visual Frontend</title>
     <meta
       name="description"
-      content="Anonymous project website placeholder for review submissions."
+      content="Spatial attention visualizations from a lightweight visual frontend for audio-visual target speaker extraction."
     />
     <style>
       :root {
@@ -15,7 +15,6 @@
         --text: #1e1a17;
         --muted: #5d534d;
         --accent: #ba4a28;
-        --accent-soft: #f1c7a8;
         --line: rgba(30, 26, 23, 0.12);
         --shadow: 0 24px 60px rgba(52, 35, 24, 0.15);
       }
@@ -36,7 +35,7 @@
       }
 
       main {
-        width: min(960px, calc(100vw - 32px));
+        width: min(920px, calc(100vw - 32px));
         margin: 0 auto;
         padding: 48px 0 64px;
       }
@@ -56,98 +55,93 @@
         justify-content: space-between;
         gap: 16px;
         align-items: center;
-      }
-
-      .badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 8px 12px;
-        border-radius: 999px;
-        background: rgba(186, 74, 40, 0.08);
-        color: var(--accent);
         font: 600 0.78rem/1.1 Arial, Helvetica, sans-serif;
         letter-spacing: 0.08em;
         text-transform: uppercase;
+        color: var(--accent);
       }
 
       .hero-body {
-        padding: 56px 24px 28px;
+        padding: 40px 24px 32px;
       }
 
       h1 {
         margin: 0;
-        max-width: 12ch;
-        font-size: clamp(3rem, 8vw, 5.8rem);
-        line-height: 0.94;
-        letter-spacing: -0.04em;
+        font-size: clamp(2rem, 5vw, 2.8rem);
+        line-height: 1.1;
+        letter-spacing: -0.03em;
       }
 
       .lead {
-        margin: 24px 0 0;
-        max-width: 48rem;
+        margin: 16px 0 0;
+        max-width: 44rem;
         color: var(--muted);
-        font: 400 1.1rem/1.75 Arial, Helvetica, sans-serif;
+        font: 400 1.05rem/1.7 Arial, Helvetica, sans-serif;
       }
 
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 16px;
+      .figure {
         margin-top: 32px;
+        padding-top: 8px;
       }
 
-      .card {
-        padding: 18px;
+      .figure-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px 24px;
+      }
+
+      .figure-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .figure-frame {
+        width: 100%;
+        aspect-ratio: 1;
         border: 1px solid var(--line);
-        border-radius: 20px;
-        background: rgba(255, 255, 255, 0.55);
+        border-radius: 4px;
+        overflow: hidden;
+        background: #0b1e4a;
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
       }
 
-      .card h2 {
-        margin: 0 0 10px;
-        font-size: 1.1rem;
+      .figure-frame video {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        background: #0b1e4a;
       }
 
-      .card p {
+      .figure-label {
         margin: 0;
-        color: var(--muted);
-        font: 400 0.98rem/1.65 Arial, Helvetica, sans-serif;
-      }
-
-      .note {
-        margin-top: 20px;
-        padding: 16px 18px;
-        border-left: 4px solid var(--accent);
-        background: linear-gradient(90deg, rgba(241, 199, 168, 0.42), rgba(241, 199, 168, 0.1));
-        border-radius: 14px;
-        color: var(--muted);
-        font: 400 0.96rem/1.65 Arial, Helvetica, sans-serif;
-      }
-
-      code {
-        padding: 0.15rem 0.35rem;
-        border-radius: 6px;
-        background: rgba(30, 26, 23, 0.08);
-        font-family: "Courier New", Courier, monospace;
-        font-size: 0.95em;
-      }
-
-      footer {
-        margin-top: 18px;
-        color: var(--muted);
+        font: 400 0.95rem/1.4 Arial, Helvetica, sans-serif;
+        color: var(--text);
         text-align: center;
-        font: 400 0.9rem/1.5 Arial, Helvetica, sans-serif;
+      }
+
+      .figure-caption {
+        margin: 22px 0 0;
+        color: var(--muted);
+        font: 400 0.92rem/1.65 Arial, Helvetica, sans-serif;
+        text-align: justify;
+      }
+
+      .figure-caption strong {
+        color: var(--text);
+        font-weight: 600;
       }
 
       @media (max-width: 640px) {
+        .figure-grid {
+          grid-template-columns: 1fr;
+        }
+
         .hero-top {
           flex-direction: column;
           align-items: flex-start;
-        }
-
-        .hero-body {
-          padding-top: 42px;
         }
       }
     </style>
@@ -156,47 +150,83 @@
     <main>
       <section class="hero">
         <div class="hero-top">
-          <span class="badge">Anonymous Review Build</span>
-          <span>Static placeholder served from <code>docs/</code></span>
+          <span>Lightweight Visual Frontend</span>
+          <span>Attention visualization</span>
         </div>
         <div class="hero-body">
-          <h1>Project Website Placeholder</h1>
+          <h1>Spatial Attention Maps</h1>
           <p class="lead">
-            This page is intentionally minimal. It provides a stable GitHub Pages endpoint
-            for anonymous review workflows and can be replaced later with project-specific
-            content, figures, demos, or supplementary material.
+            Visualizations from four attention heads in the lightweight visual frontend.
+            Each panel shows spatial attention over the lip region of interest.
           </p>
-          <div class="grid">
-            <article class="card">
-              <h2>Current status</h2>
-              <p>
-                A publication-safe landing page is available without author names,
-                affiliations, or repository owner references.
-              </p>
-            </article>
-            <article class="card">
-              <h2>Suggested next content</h2>
-              <p>
-                Add abstract text, teaser images, benchmarks, videos, or links to datasets
-                after deciding what should remain visible during review.
-              </p>
-            </article>
-            <article class="card">
-              <h2>Anonymous mirror support</h2>
-              <p>
-                Because the page is stored in the repository branch itself, mirror services
-                such as <code>anonymous.4open.science</code> can keep the page accessible.
-              </p>
-            </article>
-          </div>
-          <div class="note">
-            Replace this placeholder only with content that is safe for double-anonymous review.
-            Avoid names, logos, institution references, analytics identifiers, or direct links
-            that expose authorship.
-          </div>
+
+          <figure class="figure">
+            <div class="figure-grid">
+              <div class="figure-item">
+                <div class="figure-frame">
+                  <video
+                    src="assets/videos/S50001_mask0.mp4"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata"
+                    aria-label="Spatial attention map for attention head 1"
+                  ></video>
+                </div>
+                <p class="figure-label">(a) Head 1</p>
+              </div>
+              <div class="figure-item">
+                <div class="figure-frame">
+                  <video
+                    src="assets/videos/S50001_mask1.mp4"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata"
+                    aria-label="Spatial attention map for attention head 2"
+                  ></video>
+                </div>
+                <p class="figure-label">(b) Head 2</p>
+              </div>
+              <div class="figure-item">
+                <div class="figure-frame">
+                  <video
+                    src="assets/videos/S50001_mask2.mp4"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata"
+                    aria-label="Spatial attention map for attention head 3"
+                  ></video>
+                </div>
+                <p class="figure-label">(c) Head 3</p>
+              </div>
+              <div class="figure-item">
+                <div class="figure-frame">
+                  <video
+                    src="assets/videos/S50001_mask3.mp4"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata"
+                    aria-label="Spatial attention map for attention head 4"
+                  ></video>
+                </div>
+                <p class="figure-label">(d) Head 4</p>
+              </div>
+            </div>
+            <figcaption class="figure-caption">
+              <strong>Fig. 1:</strong> Spatial attention maps from 4 attention heads.
+              The 11&nbsp;&times;&nbsp;11 feature maps are bilinearly upsampled to the
+              original 88&nbsp;&times;&nbsp;88 lip ROI for visualization.
+            </figcaption>
+          </figure>
         </div>
       </section>
-      <footer>Anonymous project website placeholder</footer>
     </main>
   </body>
 </html>
