@@ -113,6 +113,7 @@
         height: 100%;
         object-fit: contain;
         background: #0b1e4a;
+        cursor: pointer;
       }
 
       .figure-label {
@@ -165,56 +166,68 @@
               <div class="figure-item">
                 <div class="figure-frame">
                   <video
-                    src="assets/videos/S50001_mask0.mp4"
+                    class="attention-video"
                     autoplay
                     muted
                     loop
                     playsinline
-                    preload="metadata"
+                    controls
+                    preload="auto"
                     aria-label="Spatial attention map for attention head 1"
-                  ></video>
+                  >
+                    <source src="assets/videos/S50001_mask0.mp4" type="video/mp4" />
+                  </video>
                 </div>
                 <p class="figure-label">(a) Head 1</p>
               </div>
               <div class="figure-item">
                 <div class="figure-frame">
                   <video
-                    src="assets/videos/S50001_mask1.mp4"
+                    class="attention-video"
                     autoplay
                     muted
                     loop
                     playsinline
-                    preload="metadata"
+                    controls
+                    preload="auto"
                     aria-label="Spatial attention map for attention head 2"
-                  ></video>
+                  >
+                    <source src="assets/videos/S50001_mask1.mp4" type="video/mp4" />
+                  </video>
                 </div>
                 <p class="figure-label">(b) Head 2</p>
               </div>
               <div class="figure-item">
                 <div class="figure-frame">
                   <video
-                    src="assets/videos/S50001_mask2.mp4"
+                    class="attention-video"
                     autoplay
                     muted
                     loop
                     playsinline
-                    preload="metadata"
+                    controls
+                    preload="auto"
                     aria-label="Spatial attention map for attention head 3"
-                  ></video>
+                  >
+                    <source src="assets/videos/S50001_mask2.mp4" type="video/mp4" />
+                  </video>
                 </div>
                 <p class="figure-label">(c) Head 3</p>
               </div>
               <div class="figure-item">
                 <div class="figure-frame">
                   <video
-                    src="assets/videos/S50001_mask3.mp4"
+                    class="attention-video"
                     autoplay
                     muted
                     loop
                     playsinline
-                    preload="metadata"
+                    controls
+                    preload="auto"
                     aria-label="Spatial attention map for attention head 4"
-                  ></video>
+                  >
+                    <source src="assets/videos/S50001_mask3.mp4" type="video/mp4" />
+                  </video>
                 </div>
                 <p class="figure-label">(d) Head 4</p>
               </div>
@@ -228,5 +241,72 @@
         </div>
       </section>
     </main>
+    <script>
+      (function () {
+        var videos = Array.prototype.slice.call(
+          document.querySelectorAll(".attention-video")
+        );
+
+        function playVideo(video) {
+          if (!video || video.readyState < 2) return;
+          var promise = video.play();
+          if (promise && typeof promise.catch === "function") {
+            promise.catch(function () {
+              /* Autoplay may be blocked until user interaction. */
+            });
+          }
+        }
+
+        function playAll() {
+          videos.forEach(playVideo);
+        }
+
+        videos.forEach(function (video) {
+          video.muted = true;
+          video.defaultMuted = true;
+          video.setAttribute("muted", "");
+
+          ["loadeddata", "canplay"].forEach(function (eventName) {
+            video.addEventListener(eventName, function () {
+              playVideo(video);
+            });
+          });
+
+          video.addEventListener("click", function () {
+            if (video.paused) {
+              playVideo(video);
+            }
+          });
+        });
+
+        playAll();
+
+        if ("IntersectionObserver" in window) {
+          var observer = new IntersectionObserver(
+            function (entries) {
+              entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                  playVideo(entry.target);
+                }
+              });
+            },
+            { threshold: 0.2 }
+          );
+          videos.forEach(function (video) {
+            observer.observe(video);
+          });
+        }
+
+        ["pointerdown", "touchstart", "keydown"].forEach(function (eventName) {
+          document.addEventListener(
+            eventName,
+            function () {
+              playAll();
+            },
+            { once: true, passive: true }
+          );
+        });
+      })();
+    </script>
   </body>
 </html>
