@@ -125,18 +125,6 @@
         text-align: center;
       }
 
-      .figure-caption {
-        margin: 22px 0 0;
-        color: var(--muted);
-        font: 400 0.92rem/1.65 Arial, Helvetica, sans-serif;
-        text-align: justify;
-      }
-
-      .figure-caption strong {
-        color: var(--text);
-        font-weight: 600;
-      }
-
       @media (max-width: 640px) {
         .figure-grid {
           grid-template-columns: 1fr;
@@ -157,7 +145,7 @@
           <span>Attention visualization</span>
         </div>
         <div class="hero-body">
-          <h1>Spatial Attention Maps</h1>
+          <h1>Spatial Attention Heatmaps</h1>
           <p class="lead">
             Visualizations from four attention heads in the lightweight visual frontend.
             Each panel shows spatial attention over the lip region of interest.
@@ -234,11 +222,6 @@
                 <p class="figure-label">(d) Head 4</p>
               </div>
             </div>
-            <figcaption class="figure-caption">
-              <strong>Fig. 1:</strong> Spatial attention maps from 4 attention heads.
-              The 11&nbsp;&times;&nbsp;11 feature maps are bilinearly upsampled to the
-              original 88&nbsp;&times;&nbsp;88 lip ROI for visualization.
-            </figcaption>
           </figure>
         </div>
       </section>
