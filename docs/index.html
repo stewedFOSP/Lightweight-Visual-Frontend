@@ -86,8 +86,9 @@
 
       .figure-grid {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 20px 24px;
+        grid-template-columns: repeat(2, auto);
+        gap: 16px 24px;
+        justify-content: center;
       }
 
       .figure-item {
@@ -98,7 +99,7 @@
       }
 
       .figure-frame {
-        width: 100%;
+        width: 120px;
         aspect-ratio: 1;
         border: 1px solid var(--line);
         border-radius: 4px;
