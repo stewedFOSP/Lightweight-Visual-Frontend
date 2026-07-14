@@ -66,12 +66,17 @@
 
       h1 {
         margin: 0;
-        max-width: min(52rem, 100%);
+        max-width: none;
         font-family: "Source Serif 4", Georgia, serif;
-        font-size: clamp(1.85rem, 4.4vw, 2.75rem);
+        font-size: clamp(1.35rem, 2.6vw, 2.15rem);
         font-weight: 650;
-        line-height: 1.2;
+        line-height: 1.25;
         letter-spacing: -0.02em;
+      }
+
+      h1 .title-line {
+        display: block;
+        white-space: nowrap;
       }
 
       .lead {
@@ -259,8 +264,12 @@
       <header class="hero">
         <p class="eyebrow">Demo</p>
         <h1>
-          A Lightweight Dual-Branch Visual Front-End for<br />
-          Efficient Audio-Visual Target Speaker Extraction
+          <span class="title-line"
+            >A Lightweight Dual-Branch Visual Front-End for</span
+          >
+          <span class="title-line"
+            >Efficient Audio-Visual Target Speaker Extraction</span
+          >
         </h1>
         <p class="lead">
           Qualitative demos for the dual-branch visual front-end. Attention maps
