@@ -66,11 +66,11 @@
 
       h1 {
         margin: 0;
-        max-width: 18ch;
+        max-width: min(52rem, 100%);
         font-family: "Source Serif 4", Georgia, serif;
         font-size: clamp(1.85rem, 4.4vw, 2.75rem);
         font-weight: 650;
-        line-height: 1.15;
+        line-height: 1.2;
         letter-spacing: -0.02em;
       }
 
@@ -259,8 +259,8 @@
       <header class="hero">
         <p class="eyebrow">Demo</p>
         <h1>
-          A Lightweight Dual-Branch Visual Front-End for Efficient Audio-Visual
-          Target Speaker Extraction
+          A Lightweight Dual-Branch Visual Front-End for<br />
+          Efficient Audio-Visual Target Speaker Extraction
         </h1>
         <p class="lead">
           Qualitative demos for the dual-branch visual front-end. Attention maps
@@ -270,7 +270,7 @@
         </p>
         <p class="meta">
           Compared visual front-ends: ResNet18 (pretrained), BlazeNet64, and the
-          proposed method (32&times;32 + lmk84).
+          proposed method (ROI32&times;32 + lmk84).
         </p>
       </header>
 
@@ -384,7 +384,6 @@
                     <audio controls preload="none">
                       <source src="assets/audio/mix/sample1.wav" type="audio/wav" />
                     </audio>
-                    <span class="clip-label">sample1.wav</span>
                   </div>
                 </td>
                 <td colspan="2">
@@ -396,7 +395,6 @@
                     <audio controls preload="none">
                       <source src="assets/audio/mix/sample2.wav" type="audio/wav" />
                     </audio>
-                    <span class="clip-label">sample2.wav</span>
                   </div>
                 </td>
               </tr>
@@ -425,7 +423,6 @@
                         type="audio/wav"
                       />
                     </audio>
-                    <span class="clip-label">sample1_s1</span>
                   </div>
                 </td>
                 <td>
@@ -440,7 +437,6 @@
                         type="audio/wav"
                       />
                     </audio>
-                    <span class="clip-label">sample1_s2</span>
                   </div>
                 </td>
                 <td>
@@ -455,7 +451,6 @@
                         type="audio/wav"
                       />
                     </audio>
-                    <span class="clip-label">sample2_s1</span>
                   </div>
                 </td>
                 <td>
@@ -470,7 +465,6 @@
                         type="audio/wav"
                       />
                     </audio>
-                    <span class="clip-label">sample2_s2</span>
                   </div>
                 </td>
               </tr>
@@ -492,7 +486,6 @@
                         type="audio/wav"
                       />
                     </audio>
-                    <span class="clip-label">sample1_s1</span>
                   </div>
                 </td>
                 <td>
@@ -507,7 +500,6 @@
                         type="audio/wav"
                       />
                     </audio>
-                    <span class="clip-label">sample1_s2</span>
                   </div>
                 </td>
                 <td>
@@ -522,7 +514,6 @@
                         type="audio/wav"
                       />
                     </audio>
-                    <span class="clip-label">sample2_s1</span>
                   </div>
                 </td>
                 <td>
@@ -537,7 +528,6 @@
                         type="audio/wav"
                       />
                     </audio>
-                    <span class="clip-label">sample2_s2</span>
                   </div>
                 </td>
               </tr>
@@ -559,7 +549,6 @@
                         type="audio/wav"
                       />
                     </audio>
-                    <span class="clip-label">sample1_s1</span>
                   </div>
                 </td>
                 <td>
@@ -574,7 +563,6 @@
                         type="audio/wav"
                       />
                     </audio>
-                    <span class="clip-label">sample1_s2</span>
                   </div>
                 </td>
                 <td>
@@ -589,7 +577,6 @@
                         type="audio/wav"
                       />
                     </audio>
-                    <span class="clip-label">sample2_s1</span>
                   </div>
                 </td>
                 <td>
@@ -604,15 +591,14 @@
                         type="audio/wav"
                       />
                     </audio>
-                    <span class="clip-label">sample2_s2</span>
                   </div>
                 </td>
               </tr>
 
               <tr>
                 <th class="row-label" scope="row">
-                  Proposed
-                  <small>32&times;32 + lmk84 · tol=5 · es=15</small>
+                  Proposed Method
+                  <small>ROI32&times;32 + lmk84 · tol=5 · es=15</small>
                 </th>
                 <td>
                   <div class="clip">
@@ -626,7 +612,6 @@
                         type="audio/wav"
                       />
                     </audio>
-                    <span class="clip-label">sample1_s1</span>
                   </div>
                 </td>
                 <td>
@@ -641,7 +626,6 @@
                         type="audio/wav"
                       />
                     </audio>
-                    <span class="clip-label">sample1_s2</span>
                   </div>
                 </td>
                 <td>
@@ -656,7 +640,6 @@
                         type="audio/wav"
                       />
                     </audio>
-                    <span class="clip-label">sample2_s1</span>
                   </div>
                 </td>
                 <td>
@@ -671,7 +654,6 @@
                         type="audio/wav"
                       />
                     </audio>
-                    <span class="clip-label">sample2_s2</span>
                   </div>
                 </td>
               </tr>
