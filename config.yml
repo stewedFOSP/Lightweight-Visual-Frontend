@@ -1,0 +1,11 @@
+# Network config used by inference.py
+model_kwargs:
+  out_channels: 128
+  in_channels: 512
+  vpre_channels: 168
+  vin_channels: 64
+  vout_channels: 64
+  num_blocks: 16
+  upsampling_depth: 5
+  enc_kernel_size: 1
+  num_sources: 1

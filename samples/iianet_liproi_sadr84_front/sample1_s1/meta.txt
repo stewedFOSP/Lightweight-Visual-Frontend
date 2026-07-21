@@ -1,6 +1,0 @@
-utt=0VJqrlH9cdI_00002_0.49459_t7Xr3AsBEK4_00006_-0.49459
-source_roi=/jinzhan/data/lrs3_rebuild/side_effects/mouthroi/0VJqrlH9cdI_00002.npz
-source_lmk=/jinzhan/data/lrs3_rebuild/side_effects/landmark_sadr84_front/0VJqrlH9cdI_00002.npz
-liproi_shape=(57, 32, 32)
-lmk_shape=(57, 84, 3)
-mix_len=36864

@@ -1,6 +1,0 @@
-utt=0ZfSOArXbGQ_00003_1.188_RplnSVTzvnU_00003_-1.188
-source_roi=/jinzhan/data/lrs3_rebuild/side_effects/mouthroi/RplnSVTzvnU_00003.npz
-source_lmk=/jinzhan/data/lrs3_rebuild/side_effects/landmark_sadr84_front/RplnSVTzvnU_00003.npz
-liproi_shape=(144, 32, 32)
-lmk_shape=(144, 84, 3)
-mix_len=92160
